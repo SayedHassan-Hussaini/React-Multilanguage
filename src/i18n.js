@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import HttpApi from 'i18next-http-backend';
+import HttpApi from "i18next-http-backend";
 
 const resources = {
   en: {
@@ -56,20 +56,21 @@ const option = {
   cookieOptions: { path: "/", sameSite: "strict" },
 };
 
-const backendOption ={
-    loadPath: '/locales/{{lng}}/{{ns}}.json',
-}
+const backendOption = {
+  loadPath: "/lang/{{lng}}/translation.json",
+};
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(LanguageDetector)
   .use(HttpApi)
   .init({
-    resources,
+    supportedLngs: ["en", "pr"],
+    // resources,
     // lng: document.querySelector("html").lang,
     fallbackLng: "en",
-    detection:option,
-    backend:backendOption,
-    react:{useSuspense:false}
+    detection: option,
+    backend: backendOption,
+    react: { useSuspense: false },
   });
 
 export default i18n;

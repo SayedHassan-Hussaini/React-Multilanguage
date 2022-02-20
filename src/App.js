@@ -1,12 +1,9 @@
-import {useTranslation} from 'react-i18next'
+import { Container } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 
 function App() {
-  const {t}=useTranslation()
-  return (
-    <div className="App">
-      {t('welcome-message')}
-    </div>
-  );
+  const { t } = useTranslation();
+  return <Container>{t("welcome_message")}</Container>;
 }
 
 export default App;

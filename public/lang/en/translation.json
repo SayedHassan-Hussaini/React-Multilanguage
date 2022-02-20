@@ -1,0 +1,6 @@
+{
+    "title_app":"React Multilanguage",
+    "language":"English",
+    "welcome_message":"welcome to react Multilanguage",
+    "date_now":"Date {{day_now}}"
+}
