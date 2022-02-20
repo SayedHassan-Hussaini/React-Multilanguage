@@ -23,9 +23,9 @@ const resources = {
 const option = {
   // order and from where user language should be detected
   order: [
+    "cookie",
     "htmlTag",
     "querystring",
-    "cookie",
     "localStorage",
     "sessionStorage",
     "navigator",
