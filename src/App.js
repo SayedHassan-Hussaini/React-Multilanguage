@@ -22,6 +22,9 @@ function App() {
   const currentlanguesCode = localStorage.getItem("i18nextLng");
   const currentLangue = languages.filter((l) => l.code === currentlanguesCode);
   const { t } = useTranslation();
+  // const day_now;
+  const date=new Date()
+  const day_now=date.getFullYear()
 
   useEffect(() => {
     document.body.dir = currentLangue[0]?.dir || "ltr";
@@ -50,7 +53,7 @@ function App() {
         </Col>
       </Row>
       <h1 className="text-center">{t("welcome_message")}</h1>
-      <div className="text-center">{t("date_now", Date.now())}</div>
+      <div className="text-center">{t("date_now",{day_now})}</div>
     </Container>
   );
 }
