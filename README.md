@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Setup React Multilanguage with react-i18next and i18next
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
