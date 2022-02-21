@@ -28,6 +28,7 @@ function App() {
 
   useEffect(() => {
     document.body.dir = currentLangue[0]?.dir || "ltr";
+    document.title =t('title_app')
   }, [currentLangue]);
 
   return (
