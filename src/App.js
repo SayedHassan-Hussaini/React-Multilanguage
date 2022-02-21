@@ -2,7 +2,6 @@ import { Col, Container, Row, Dropdown } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 import i18next from "i18next";
-import Cookies from 'js-cookie'
 import { useEffect } from "react";
 
 const languages = [
@@ -20,15 +19,17 @@ const languages = [
 ];
 
 function App() {
-  const currentlanguesCode = Cookies.get("i18next") || "en";
+  const currentlanguesCode = localStorage.getItem("i18nextLng");
   const currentLangue = languages.filter((l) => l.code === currentlanguesCode);
   const { t } = useTranslation();
+
   useEffect(() => {
-    document.body.dir = currentLangue.dir || "ltr";
-  }, currentLangue);
+    document.body.dir = currentLangue[0]?.dir || "ltr";
+  }, [currentLangue]);
+
   return (
     <Container>
-      <Row className="pt-1">
+      <Row className="pt-2">
         <Col>
           <Dropdown>
             <Dropdown.Toggle id="dropdown-basic">
